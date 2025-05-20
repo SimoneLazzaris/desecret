@@ -25,8 +25,8 @@ fn main() {
                 Yaml::value_from_str("stringData"),
                 Yaml::Mapping(stringdata),
             );
+            mdoc.remove(&data);
         }
-        mdoc.remove(&data);
         let mut output = String::new();
         YamlEmitter::new(&mut output).dump(&doc).unwrap();
         println!("{}", output);
